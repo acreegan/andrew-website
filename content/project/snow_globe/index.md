@@ -8,7 +8,7 @@ date: "2021-02-01"
 external_link: ""
 
 image:
-  placement: 1
+  placement: 2
   caption: 
   focal_point: Smart
 
