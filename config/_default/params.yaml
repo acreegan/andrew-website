@@ -124,7 +124,7 @@ map:
 marketing:
   analytics:
     google_analytics: 'G-GYVZJHSH6D'
-  google_tag_manager: ''
+    google_tag_manager: 'G-GYVZJHSH6D'
   google_site_verification: ''
   baidu_site_verification: ''
   baidu_tongji: ''
