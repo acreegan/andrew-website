@@ -14,17 +14,20 @@ organizations:
   url: https://www.auckland.ac.nz/en.html
 
 # Short bio (displayed in user profile at end of posts)
-bio: I am an engineer working on Electrical Impedance Tomography at the Auckland Bioengineering Institute
+bio: I am an engineer working on medical devices at the Auckland Bioengineering Institute
 
 # Interests to show in About widget
 interests:
+- Medical Devices
+- 3D Printing
 - Wearable Robotics
-- Assistive Augmentation
-- Electrical Impedance Tomography
 
 # Education to show in About widget
 education:
   courses:
+  - course: PhD in Bioengineering (Submitting January 2025)
+    institution: University of Auckland
+    year: 2025
   - course: ME in Bioengineering
     institution: University of Auckland
     year: 2013
@@ -48,7 +51,7 @@ social:
   link: https://github.com/acreegan
 - icon: linkedin
   icon_pack: fab
-  link: https://www.linkedin.com/in/andrew-creegan-705a5543/
+  link: https://www.linkedin.com/in/andrew-creegan/
 
 
 # Enter email to display Gravatar (if Gravatar enabled in Config)
@@ -58,4 +61,4 @@ email: ""
 highlight_name: false
 ---
 
-I am an engineer holding a master’s degree in Bioengineering from the University of Auckland. Over the last several years I have worked in a broad range of engineering disciplines including mechanical, electrical, and software design, and data science. I enjoy working at the crossroads between these disciplines, and I believe cross disciplinary knowledge is very helpful in realizing functional goals in product development.
+I am a mechatronics and biomedical engineer with a love for all kinds of making and measuring.  After 8 years of experience in industry, I went on to complete my PhD in bioengineering and am now looking for a role where I can make a difference. My experience has given me a combination of the cross-disciplinary skills that were needed to succeed in the world of startups, and the rigorous approach needed for scientific research.
