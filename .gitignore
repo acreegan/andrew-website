@@ -6,3 +6,5 @@
 public/
 jsconfig.json
 node_modules/
+
+/hugo_extended_0.81.0_Windows-64bit
