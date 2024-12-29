@@ -2,11 +2,10 @@
 title: Mid-Century Inspired Side Table
 date: 2024-12-29T00:40:40.671Z
 draft: false
-featured: false
-external_link: a
+external_link: ""
 image:
-  filename: dsc05539.jpg
   focal_point: Smart
   preview_only: false
 ---
-I﻿ designed this indean rosewood side table with mid-century modern style in mind. The legs, which have both a taper and a slight splay, presented an interesting challenge, and needed to be cut with a custom-made jig on the table saw.
+
+I designed this indean rosewood side table with mid-century modern style in mind. The legs, which have both a taper and a slight splay, presented an interesting challenge, and needed to be cut with a custom-made jig on the table saw.
