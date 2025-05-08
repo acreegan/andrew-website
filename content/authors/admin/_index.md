@@ -25,7 +25,7 @@ interests:
 # Education to show in About widget
 education:
   courses:
-  - course: PhD in Bioengineering (Submitting January 2025)
+  - course: PhD in Bioengineering (Submitted April 2025)
     institution: University of Auckland
     year: 2025
   - course: ME in Bioengineering
