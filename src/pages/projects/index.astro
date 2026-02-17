@@ -39,12 +39,12 @@ const sortedTags = Object.keys(tagCounts).sort((a,b) => {return tagCounts[b] - t
         Projects
       </div>
       <div class="space-y-1">
-        <div class="animate flex items-center gap-1.5">
+        <div class="animate flex flex-wrap items-start gap-1.5">
           <div class="font-base text-sm">
             Tags: 
           </div>
           {sortedTags.map((tag,i) => (
-            <a class="font-base text-sm" href={`/projects/tags/${tag}`}>{tag}{i===sortedTags.length-1?"":","}</a>
+            <a class="font-base text-sm " href={`/projects/tags/${tag}`}>{tag}{i===sortedTags.length-1?"":","}</a>
           ))}
         </div>
       </div>
