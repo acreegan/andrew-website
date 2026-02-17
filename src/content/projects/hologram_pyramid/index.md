@@ -1,7 +1,8 @@
 ---
 title: Hologram Pyramid
 description: A psuedo hologram for creatively displaying bioengineering models
-date: "2021-12-29"
+date: "2022-02-01"
+tags: ["electronics", "CAD"]
 thumbnail:
   src: "./featured.jpg"
   alt: "Hologram pyramid"

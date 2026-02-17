@@ -1,7 +1,8 @@
 ---
 title: Pohutukawa Snow Globe
 description: A Pohutukawa themed snow globe
-date: "2021-02-01"
+date: "2021-01-31"
+tags: ["electronics"]
 thumbnail:
   src: "./featured.jpg"
   alt: "Snow Globe"

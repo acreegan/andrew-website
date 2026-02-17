@@ -3,7 +3,7 @@ import type { Site, Metadata, Socials } from "@types";
 export const SITE: Site = {
   NAME: "Andrew Creegan",
   EMAIL: "andrew.s.creegan@gmail.com",
-  NUM_POSTS_ON_HOMEPAGE: 5,
+  NUM_PROJECTS_ON_HOMEPAGE: 5,
 };
 
 export const HOME: Metadata = {
@@ -11,9 +11,9 @@ export const HOME: Metadata = {
   DESCRIPTION: "Andrew Creegan's Website",
 };
 
-export const BLOG: Metadata = {
-  TITLE: "Blog",
-  DESCRIPTION: "A collection of articles by Andrew",
+export const PROJECTS: Metadata = {
+  TITLE: "Projects",
+  DESCRIPTION: "A collection of projects by Andrew",
 };
 
 export const SOCIALS: Socials = [

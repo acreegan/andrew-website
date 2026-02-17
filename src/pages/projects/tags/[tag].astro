@@ -1,35 +1,58 @@
 ---
-import { type CollectionEntry, getCollection } from "astro:content";
 import PageLayout from "@layouts/PageLayout.astro";
 import Container from "@components/Container.astro";
 import ArrowCard from "@components/ArrowCard.astro";
-import { BLOG } from "@consts";
+import { type CollectionEntry, getCollection } from "astro:content";
+import { PROJECTS } from "@consts";
 
-const data = (await getCollection("blog"))
-  .filter(post => !post.data.draft)
-  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
-  
-type Acc = {
-  [year: string]: CollectionEntry<"blog">[];
+export async function getStaticPaths(): Promise<any> {
+    const allPosts = (await getCollection("projects"))
+        .filter(post => !post.data.draft)
+        .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+    
+
+    const uniqueTags = [...new Set(allPosts.map((post: any) => post.data.tags).flat())];
+
+    return uniqueTags.map((tag) => {
+        const filteredPosts = allPosts.filter((post: any) => post.data.tags.includes(tag));
+
+            type Acc = {
+        [year: string]: CollectionEntry<"projects">[];
+    }
+
+        const posts = filteredPosts.reduce((acc: Acc, post) => {
+            const year = post.data.date.getFullYear().toString();
+            if (!acc[year]) {
+            acc[year] = [];
+            }
+            acc[year].push(post);
+            return acc;
+        }, {});
+
+        return {
+        params: { tag },
+        props: { posts},
+        };
+  });
+
 }
 
-const posts = data.reduce((acc: Acc, post) => {
-    const year = post.data.date.getFullYear().toString();
-    if (!acc[year]) {
-      acc[year] = [];
-    }
-    acc[year].push(post);
-    return acc;
-  }, {});
+
+interface Props {posts:{[key:string]:CollectionEntry<"projects">[]}}
+
+const { tag } = Astro.params;
+const { posts } = Astro.props;
 
 const years = Object.keys(posts).sort((a, b) => parseInt(b) - parseInt(a)); 
 ---
 
-<PageLayout title={BLOG.TITLE} description={BLOG.DESCRIPTION}>
+
+<PageLayout title={PROJECTS.TITLE} description={PROJECTS.DESCRIPTION}>
   <Container>
     <div class="space-y-10">
       <div class="animate font-semibold text-black dark:text-white">
-        Blog
+        Projects tagged "{tag}"
       </div>
       <div class="space-y-4">
         {years.map(year => (

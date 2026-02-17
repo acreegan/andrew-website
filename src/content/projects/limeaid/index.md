@@ -1,7 +1,8 @@
 ---
 title: Limeaid
 description: A mobile app concept
-date: "2021-02-01"
+date: "2018-08-22"
+tags: ["software"]
 thumbnail:
   src: "./featured.jpg"
   alt: "Lime logo"

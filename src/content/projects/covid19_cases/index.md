@@ -1,7 +1,8 @@
 ---
 title: "COVID-19 Cases"
 description: "A website for tracking COVID-19 cases"
-date: "2021-02-01"
+date: "2020-05-04"
+tags: ["web", "software"]
 thumbnail:
   src: "./featured.png"
   alt: "An image of a website showing a graph"
