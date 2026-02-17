@@ -1,7 +1,7 @@
 ---
 title: "Twin Topos"
 description: "A website for comparing the size of cities"
-date: "2021-12-30"
+date: "2023-05-29"
 tags: ["web","software"]
 thumbnail: 
     src: "./featured.png"

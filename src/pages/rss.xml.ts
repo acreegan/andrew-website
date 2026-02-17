@@ -7,10 +7,10 @@ type Context = {
 }
 
 export async function GET(context: Context) {
-  const blog = (await getCollection("blog"))
+  const projects = (await getCollection("projects"))
   .filter(post => !post.data.draft);
 
-  const items = [...blog]
+  const items = [...projects]
     .sort((a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf());
 
   return rss({
@@ -20,6 +20,7 @@ export async function GET(context: Context) {
     items: items.map((item) => ({
       title: item.data.title,
       description: item.data.description,
+      tags: item.data.tags,
       pubDate: item.data.date,
       link: `/${item.collection}/${item.id}/`,
     })),
