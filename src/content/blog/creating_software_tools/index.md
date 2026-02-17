@@ -2,8 +2,7 @@
 title: Creating Software Tools
 description: A post discussing software development for researchers
 date: "2024-12-30"
-draft: false
-external_link: ""
+tags: ["research", "software"]
 thumbnail:
   src: "./featured.png"
   alt: "Git workflow image"

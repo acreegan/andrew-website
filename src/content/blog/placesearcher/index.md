@@ -1,7 +1,7 @@
 ---
 title: Placesearcher
 description: A data science project
-tags:
+tags: ["web", "software"]
 date: "2021-02-01"
 thumbnail:
   src: "./featured.png"

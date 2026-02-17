@@ -2,6 +2,7 @@
 title: "Twin Topos"
 description: "A website for comparing the size of cities"
 date: "2021-12-30"
+tags: ["web","software"]
 thumbnail: 
     src: "./featured.png"
     alt: "An image showing two maps side by side"

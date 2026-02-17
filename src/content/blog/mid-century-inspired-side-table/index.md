@@ -2,6 +2,7 @@
 title: Mid-Century Inspired Side Table
 description: A wooden side table with mid-century design
 date: 2024-12-29T00:40:40.671Z
+tags: ["woodworking"]
 thumbnail:
   src: "./featured.png"
   alt: "Side table"
