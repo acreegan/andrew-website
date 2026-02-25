@@ -1,0 +1,34 @@
+---
+title: "3D Printed Lamp"
+description: "A lamp made with 3D Printing"
+date: "2026-02-25"
+tags: ["3D printing"]
+thumbnail: 
+    src: "./featured.jpg"
+    alt: "An image showing a 3D printed lamp."
+---
+import { Image } from 'astro:assets';
+import featured from './featured.jpg';
+import rhino from './Rhino_Grasshopper_Screenshot.png';
+import solidworks from './Lamp_Hidden_Lines.png';
+import lamp_w_bulb from './lamp_with_bulb.jpg';
+
+
+<Image src={featured} alt="3D Printed Lamp" class="w-xs" />
+
+
+Lamps are one of those projects that are just perfect for 3D printing. They don’t need much mechanical strength, and 3D printing lets you translate almost any shape imaginable from the computer into reality.
+
+With this project I wanted to create an organic design that would work well to create soft ambient lighting and a relaxing feel. I also wanted to make sure the functional aspects of the lamp worked well (inserting and replacing the bulb, etc.). Finally, the goal was to create a design that could be shared and printed by others.
+
+The outer surface of the lamp was designed using Rhino, a design focussed 3D modelling software that makes it easy to create complex organic shapes based on equations and variables. 
+
+<Image src={rhino} alt="3D Printed Lamp" class="w-md" />
+
+To keep the electrical components safe and user friendly, I designed the lamp to fit around the Ikea Strala bulb holder. Using parts from Ikea also means that the components for the lamp are widely accessible around the world. To incorporate the Strala, I created an adapter that fits around it, which is designed to twist and click directly into the base of the lamp without requiring any fasteners. The adapter and screw mechanism were modelled in Solidworks, a design software which uses parametric modelling, useful for functional parts which need to meet mechanical tolerances.
+
+<Image src={solidworks} alt="3D Printed Lamp" class="w-sm" />
+
+The lamp was printed using the Prusa MK3.5S printers at Maker Community Inc. A few iterations of the adapter were needed to get the fit and function just right, and it was nice to have members like Darren around to bounce ideas off and help keep the printers running smoothly! Now I’ve got the lamp printing nicely, I’m planning to print a range of similar designs with different surface shapes. I’ll also put together some instructions for anyone who wants to make their own lamp with just a 3D printer and some parts from Ikea.
+
+<Image src={lamp_w_bulb} alt="3D Printed Lamp" class="w-xs" />
