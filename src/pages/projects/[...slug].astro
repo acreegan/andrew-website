@@ -19,9 +19,11 @@ type Props = CollectionEntry<"projects">;
 
 const post = Astro.props;
 const { Content } = await render(post);
+
+const ogImageUrl = `/open-graph/${post.id}.png`;
 ---
 
-<PageLayout title={post.data.title} description={post.data.description}>
+<PageLayout title={post.data.title} description={post.data.description} image={ogImageUrl}>
   <Container>
     <div class="animate">
       <BackToPrev href="/projects">
