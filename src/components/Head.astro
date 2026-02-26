@@ -20,7 +20,9 @@ interface Props {
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-const { title, description, image = "../src/pages/avatar.png" } = Astro.props;
+import avatar from "../pages/avatar.png";
+
+const { title, description, image = avatar.src } = Astro.props;
 
 const gaId = import.meta.env.PUBLIC_GA_ID;
 ---

@@ -1,21 +1,9 @@
 import { getCollection } from 'astro:content';
 import { OGImageRoute } from 'astro-og-canvas';
+import path from 'node:path';
 
 const posts = await getCollection('projects');
-
-const pages = Object.fromEntries(
-  posts.map((post) => {
-    const imagePath = post.data.thumbnail ? post.data.thumbnail.src.src.split("?")[0].split("@fs/")[1] : undefined
-    return [
-      post.id,
-      {
-        title: post.data.title,
-        description: post.data.description,
-        thumbnailPath: imagePath,
-      }
-    ];
-  })
-);
+const pages = Object.fromEntries(posts.map(({ id, data }) => [id, data]));
 
 export const { getStaticPaths, GET } = await OGImageRoute({
   param: 'route',
@@ -28,10 +16,6 @@ export const { getStaticPaths, GET } = await OGImageRoute({
     logo: {
       path: './public/favicon_light.svg',
     },
-    bgImage: page.thumbnailPath? {
-      path: page.thumbnailPath,
-      fit: 'cover'
-    }:undefined ,
     bgGradient: [[10, 10, 10], [30, 30, 30]], 
     font: {
       title: { 

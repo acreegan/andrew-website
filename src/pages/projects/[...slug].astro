@@ -5,6 +5,7 @@ import Container from "@components/Container.astro";
 import FormattedDate from "@components/FormattedDate.astro";
 import { readingTime } from "@lib/utils";
 import BackToPrev from "@components/BackToPrev.astro";
+import { undefined } from "astro:schema";
 
 export async function getStaticPaths() {
   const projects = (await getCollection("projects"))
@@ -20,10 +21,11 @@ type Props = CollectionEntry<"projects">;
 const post = Astro.props;
 const { Content } = await render(post);
 
-const ogImageUrl = `/open-graph/${post.id}.png`;
+// const ogImageUrl = `/open-graph/${post.id}.png`;
+
 ---
 
-<PageLayout title={post.data.title} description={post.data.description} image={ogImageUrl}>
+<PageLayout title={post.data.title} description={post.data.description}>
   <Container>
     <div class="animate">
       <BackToPrev href="/projects">
