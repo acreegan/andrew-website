@@ -1,42 +1,40 @@
 import { getCollection } from 'astro:content';
 import { OGImageRoute } from 'astro-og-canvas';
-import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const projectRoot = path.resolve(__dirname, '../../..');
-
 const posts = await getCollection('projects');
-
 const pages = Object.fromEntries(
-posts.map((post) => {
-  const thumb = post.data.thumbnail?.src;
-  let imagePath = '';
+  posts.map((post) => {
+    // 1. Get the image object
+    const thumb = post.data.thumbnail?.src;
+    let imagePath = '';
 
-  if (thumb) {
-    // 1. Remove the Astro-specific /@fs/ prefix
-    // 2. Remove any leading slash that might remain (e.g., /C:/ becomes C:/)
-    let cleanPath = thumb.src
-      .replace('/@fs/', '')      // Remove Astro prefix
-      .split('?')[0];            // Remove query params
-
-    if (cleanPath.startsWith('/') && cleanPath[2] === ':') {
-      cleanPath = cleanPath.slice(1); // Turn /C:/ into C:/
+    if (thumb) {
+      /**
+       * In Astro 5, 'thumb' contains 'fsPath' if it's a local asset.
+       * If fsPath isn't available, we manually resolve the path.
+       */
+      // @ts-ignore - fsPath is often present but not always in the type definition
+      const rawPath = thumb.fsPath || thumb.src.split('?')[0];
+      
+      // 2. Clean up Windows/Vite prefixes
+      let cleanPath = rawPath.replace('/@fs/', '');
+      if (cleanPath.startsWith('/') && cleanPath[2] === ':') {
+        cleanPath = cleanPath.slice(1);
+      }
+      
+      imagePath = path.normalize(cleanPath);
     }
 
-    // 3. Normalize the path for Windows (turns / into \)
-    imagePath = path.normalize(cleanPath);
-  }
-
-  return [
-    post.id,
-    {
-      title: post.data.title,
-      description: post.data.description,
-      thumbnailPath: imagePath,
-    }
-  ];
-})
+    return [
+      post.id,
+      {
+        title: post.data.title,
+        description: post.data.description,
+        thumbnailPath: imagePath,
+      }
+    ];
+  })
 );
 
 export const { getStaticPaths, GET } = await OGImageRoute({

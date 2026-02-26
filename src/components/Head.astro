@@ -20,7 +20,6 @@ interface Props {
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-import { Image } from 'astro:assets';
 import avatar from "../pages/avatar.png";
 
 const { title, description, image = avatar.src } = Astro.props;
